@@ -17,6 +17,21 @@ export async function userLogin(formData) {
 
 
 
+export async function fetchDataFromAPI(props) {
+  try {
+   
+    const res = await axios.get(`${configs.apiUrl}/student`,{
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        'Authorization': `Bearer ${props}`, 
+      },
+    });
 
+    return res;
+  }
+   catch (error) {
+    return error.response;
+  }
+}
    
  

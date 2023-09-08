@@ -62,8 +62,7 @@ const Login = () => {
   
           console.log('Login successful');
           console.log('Role:', role);
-          console.log('Token:', token);
-  
+          
           AsyncStorage.setItem('token', token);
           navigation.navigate('Dashboard');
         } else {

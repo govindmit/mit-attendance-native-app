@@ -1,0 +1,110 @@
+{
+    "data": [
+        {
+            "DOB": "1998-02-02T00:00:00+05:30",
+            "__v": 0,
+            "_id": "6417ffe50c7c9910a52ce75b",
+            "assignClass": [Object
+            ],
+            "attaindence": [Object
+            ],
+            "city": "indore",
+            "country": "62c3ddf4211090cd519f550a",
+            "emergency": [Array
+            ],
+            "fatherName": "testing",
+            "image": "uploads/1679396310944twenty-five.jpeg",
+            "lastName": "jain",
+            "medical": "test",
+            "name": "Kapil",
+            "state": "62c3decc211090cd519f551a",
+            "street_Address": "114, bhawarkuan",
+            "zip_code": 45704
+        },
+        {
+            "DOB": "2016-11-08T00:00:00+05:30",
+            "__v": 0,
+            "_id": "6418439a58176c892dc3e9c6",
+            "assignClass": [Object
+            ],
+            "attaindence": [Object
+            ],
+            "city": "Odit sunt dignissim",
+            "country": "62c3ddf4211090cd519f550a",
+            "emergency": [Array
+            ],
+            "fatherName": "Alfonso ",
+            "lastName": "Calderon",
+            "medical": "Nothing",
+            "name": "Herrod",
+            "state": "62c3deea211090cd519f5520",
+            "street_Address": "Numquam pariatur Vo",
+            "zip_code": 91545
+        },
+        {
+            "DOB": "1998-02-04T00:00:00+05:30",
+            "__v": 0,
+            "_id": "641991c6c96c2685a71aaca4",
+            "assignClass": [Object
+            ],
+            "attaindence": [Object
+            ],
+            "city": "indore",
+            "country": "62c3ddf4211090cd519f550a",
+            "emergency": [Array
+            ],
+            "fatherName": "testing",
+            "image": "uploads/1679397318250twenty-one.jpeg",
+            "lastName": "jain",
+            "medical": "",
+            "name": "Attn",
+            "state": "62c3df17211090cd519f552c",
+            "street_Address": "114, bhawarkuan",
+            "zip_code": 45204
+        },
+        {
+            "DOB": "2021-04-01T00:00:00+05:30",
+            "__v": 0,
+            "_id": "64352a1bc23b992e5d97aa77",
+            "assignClass": [Object
+            ],
+            "attaindence": [Object
+            ],
+            "city": "New York",
+            "country": "62c3ddf4211090cd519f550a",
+            "emergency": [Array
+            ],
+            "fatherName": "S Folbig",
+            "lastName": "Mendis",
+            "medical": "Test ",
+            "name": "Shawn",
+            "state": "62c3df80211090cd519f5544",
+            "street_Address": "671 Apt, 6th street",
+            "zip_code": 94575
+        },
+        {
+            "DOB": "2009-03-11T00:00:00+05:30",
+            "__v": 0,
+            "_id": "64352bb1c23b992e5d97aad2",
+            "assignClass": [Object
+            ],
+            "attaindence": [Object
+            ],
+            "city": "California",
+            "country": "62c3ddf4211090cd519f550a",
+            "emergency": [Array
+            ],
+            "fatherName": "Joseph",
+            "lastName": "Shelly",
+            "medical": "Typhoid",
+            "name": "Kim",
+            "state": "62c3de38211090cd519f550c",
+            "street_Address": "Apt 577",
+            "zip_code": 94757
+        }
+    ],
+    "totalabsent": 0,
+    "totalcount": 5,
+    "totalout": 0,
+    "totalpresent": 0
+}
