@@ -1,0 +1,1893 @@
+{
+	"info": {
+		"_postman_id": "fbfd9991-0a2f-49d8-8538-284e4bb8d396",
+		"name": "Counceller&Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17386550"
+	},
+	"item": [
+		{
+			"name": "Manager",
+			"item": [
+				{
+					"name": "Dashboard",
+					"item": [
+						{
+							"name": "getUser",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjhmM2FmYmZmMWRmODY4YTA2ZGUwM2MiLCJpYXQiOjE2NTQwNjExNDEsImV4cCI6MTY1NDA2NDc0MX0.Fsl5yZ414y3vHaQAhxl5acxTINNMt6eG0LzeX3tMhCk",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://95.111.202.157:4002/api/getUser",
+									"protocol": "http",
+									"host": [
+										"95",
+										"111",
+										"202",
+										"157"
+									],
+									"port": "4002",
+									"path": [
+										"api",
+										"getUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "saveAttaindence",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"studentId\":\"626fa7ecad68ceef529b708c\",\n    \"counsellor_id\":\"6270df94ca7b6ebd2488b06e\",\n    \"date\":\"03/05/22\",\n    \"attendence\":\"1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/saveAttaindence",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"saveAttaindence"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAttandancePDF",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fromDate\": \"2023-01-01\",\n    \"toDate\": \"2023-01-31\",\n    \"identifier\":\"month\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}getPDF/6262730b5f0f8244e6759fdc",
+									"host": [
+										"{{BASE_URL}}getPDF"
+									],
+									"path": [
+										"6262730b5f0f8244e6759fdc"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "profile",
+					"item": [
+						{
+							"name": "getUserById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/user/626927ecc3eedbec0673d135",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"user",
+										"626927ecc3eedbec0673d135"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllCountry",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://94.237.3.78:4000/api/getAllCountry",
+									"protocol": "http",
+									"host": [
+										"94",
+										"237",
+										"3",
+										"78"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"getAllCountry"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getStateBYCountryId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://94.237.3.78:4000/api/state/62613b15c2eb6962e004cf87",
+									"protocol": "http",
+									"host": [
+										"94",
+										"237",
+										"3",
+										"78"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"state",
+										"62613b15c2eb6962e004cf87"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getCityByStateId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://94.237.3.78:4000/api/city/62613b9cc2eb6962e004cf89",
+									"protocol": "http",
+									"host": [
+										"94",
+										"237",
+										"3",
+										"78"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"city",
+										"62613b9cc2eb6962e004cf89"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "saveState",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"washinton\",\n    \"cId\":\"62613b15c2eb6962e004cf87\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://94.237.3.78:4000/api/saveState",
+									"protocol": "http",
+									"host": [
+										"94",
+										"237",
+										"3",
+										"78"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"saveState"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "saveCountry",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"USA\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://94.237.3.78:4000/api/saveCountry",
+									"protocol": "http",
+									"host": [
+										"94",
+										"237",
+										"3",
+										"78"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"saveCountry"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "saveCity",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"indore\",\n    \"sId\":\"62613b9cc2eb6962e004cf89\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3001/api/saveCity",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3001",
+									"path": [
+										"api",
+										"saveCity"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateUser",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "jay",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "jaydeepc123",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "2342442424424",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://aelix.herokuapp.com/api/updateUser/6270df77ca7b6ebd2488b06a",
+									"protocol": "https",
+									"host": [
+										"aelix",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"updateUser",
+										"6270df77ca7b6ebd2488b06a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Student",
+					"item": [
+						{
+							"name": "createClass",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"className\":\"class M\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/createClass",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"createClass"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createStudent",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "tarun",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "choudhary",
+											"type": "text"
+										},
+										{
+											"key": "fatherName",
+											"value": "promod",
+											"type": "text"
+										},
+										{
+											"key": "DOB",
+											"value": "31/12/19",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "fefewfewfewfw",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/jaydeep/Downloads/complete-laravel-project 2/complete-laravel-project/public/images/blog-img-1.jpg"
+										},
+										{
+											"key": "assignClass",
+											"value": "626272fe5f0f8244e6759fd8",
+											"type": "text"
+										},
+										{
+											"key": "medical",
+											"value": "not good",
+											"type": "text"
+										},
+										{
+											"key": "emergency",
+											"value": "[\n   {\n      \"Ename\":\"varun\",\n      \"number\":\"9926682180\"\n   }\n]",
+											"type": "text"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{MANGOIT_BASE_URL}}createStudent",
+									"host": [
+										"{{MANGOIT_BASE_URL}}createStudent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update_Student",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impob24yNTRAZ21haWwuY29tIiwiX2lkIjoiNjJhYjI1MDc5MGZjMjE1MjJhZGE3NDEzIiwiaWF0IjoxNjYxMzQyOTQ1LCJleHAiOjE2NjE0MjkzNDV9._pKvEVnroq8AbMc_diXzuw6iRawhEussIlPEhkSTMPI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "verma",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "lastName",
+											"value": "choudhary",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "fatherName",
+											"value": "promod",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "DOB",
+											"value": "15/07/2019",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "fefewfewfewfw",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/jaydeep/Downloads/complete-laravel-project 2/complete-laravel-project/public/images/blog-img-1.jpg",
+											"disabled": true
+										},
+										{
+											"key": "assignClass",
+											"value": "626272f75f0f8244e6759fd6",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "medical",
+											"value": "not good",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://95.111.202.157:4001/api/updateStudent/6305f347b36f92d43a337d03",
+									"protocol": "http",
+									"host": [
+										"95",
+										"111",
+										"202",
+										"157"
+									],
+									"port": "4001",
+									"path": [
+										"api",
+										"updateStudent",
+										"6305f347b36f92d43a337d03"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get_Student",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "file",
+									"file": {}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/student",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"student"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteStudent",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":[\"6267c6dc4bfe7755afe17c6e\",\"6267c6773fdbcae788d0c659\"]\n    \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/deleteStudent",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"deleteStudent"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateManyRecords",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":[\"6267cb4124cf64d3aaac2994\",\"6267cb4624cf64d3aaac2996\"],\n    \"assignClass\":\"626272f75f0f8244e6759fd6\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/updateManyRecords",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"updateManyRecords"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "saveNo",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Ename\":\"tarun\",\n    \"number\":\"992668218\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/saveNo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"saveNo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getEno",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/getEno",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"getEno"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateStudentStatus",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"out_of_class\":\"in Rest Room\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/updateStatus/626fa7e6ad68ceef529b7089",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"updateStatus",
+										"626fa7e6ad68ceef529b7089"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getStudentRecords",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fromDate\": \"2023-01-01\",\n    \"toDate\": \"2023-01-31\",\n    \"identifier\":\"month\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SERVER_BASE_URL}}getPreviousRecords/6262730b5f0f8244e6759fdc",
+									"host": [
+										"{{SERVER_BASE_URL}}getPreviousRecords"
+									],
+									"path": [
+										"6262730b5f0f8244e6759fdc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "dismiss",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\":[\"626fa7ecad68ceef529b708c\",\"626fa7f3ad68ceef529b708f\",\"6272655eb7dd1e154172f692\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/dismiss",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"dismiss"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "searchStudent",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/search/r",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"search",
+										"r"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getClass",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/getClass",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"getClass"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "school info",
+					"item": [
+						{
+							"name": "school Info Add",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "/home/muskan/Desktop/MangoIT_Aelix/mango-attendance-node/uploads/1671541656338download.jpeg"
+										},
+										{
+											"key": "name",
+											"value": "xyz",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "raj mohalla",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "usa",
+											"type": "text"
+										},
+										{
+											"key": "managerId",
+											"value": "6315e0bd2e49ff29784e78db",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:6020/api/addSchoolInfo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6020",
+									"path": [
+										"api",
+										"addSchoolInfo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get School Info",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:6020/api/getSchoolInfo/6315e0bd2e49ff29784e78db",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6020",
+									"path": [
+										"api",
+										"getSchoolInfo",
+										"6315e0bd2e49ff29784e78db"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "School Info Update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "muskan",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "indore",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "in",
+											"type": "text"
+										},
+										{
+											"key": "managerId",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "logo",
+											"type": "file",
+											"src": "/home/muskan/Desktop/MangoIT_Aelix/mango-attendance-node/uploads/1659441526278logo192.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:6020/api/updateSchoolInfo/63e32b7512e4d71c88ab15df",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "6020",
+									"path": [
+										"api",
+										"updateSchoolInfo",
+										"63e32b7512e4d71c88ab15df"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pin",
+					"item": [
+						{
+							"name": "createPin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "pin",
+											"value": "1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/createPin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"createPin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "varifyPin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "pin",
+											"value": "1236",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/varifyPin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"varifyPin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "createManager",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Jhon Manger",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "Jhon25@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "jhone732@singddd",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "manager",
+											"type": "text"
+										},
+										{
+											"key": "street_Address",
+											"value": "44 A USA",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "62613b15c2eb6962e004cf87",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "62613c01c2eb6962e004cf8b",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "kampur",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/jaydeep/Downloads/complete-laravel-project 2/complete-laravel-project/public/images/edible_drink.jpg"
+										},
+										{
+											"key": "phone",
+											"value": "8962149416",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/createUser",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"createUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createCouncellor",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "shay",
+											"type": "text"
+										},
+										{
+											"key": "lastname",
+											"value": "Councellor",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "shry12@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										},
+										{
+											"key": "role",
+											"value": "counsellor",
+											"type": "text"
+										},
+										{
+											"key": "classId",
+											"value": "626272f75f0f8244e6759fd6",
+											"type": "text"
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										},
+										{
+											"key": "",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:4000/api/createUser",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"createUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:4000/api/deleteUser/6265476af5c29fbb9deffcaf",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"deleteUser",
+										"6265476af5c29fbb9deffcaf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createRole",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"counsellor\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://94.237.3.78:4000/api/createRole",
+									"protocol": "http",
+									"host": [
+										"94",
+										"237",
+										"3",
+										"78"
+									],
+									"port": "4000",
+									"path": [
+										"api",
+										"createRole"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "chat status",
+					"item": [
+						{
+							"name": "add status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"online\",\n      \"userId\": \"6315e0bd2e49ff29784e78db\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MANGOIT_BASE_URL}}addStatusInfo",
+									"host": [
+										"{{MANGOIT_BASE_URL}}addStatusInfo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{MANGOIT_BASE_URL}}getStatusInfo",
+									"host": [
+										"{{MANGOIT_BASE_URL}}getStatusInfo"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update status",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{Token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\":\"offline\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{MANGOIT_BASE_URL}}updateStatusInfo/63e5f5ba434e4508e851a149",
+									"host": [
+										"{{MANGOIT_BASE_URL}}updateStatusInfo"
+									],
+									"path": [
+										"63e5f5ba434e4508e851a149"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "apikey"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "jhonmanager",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{MANGOIT_BASE_URL}}/login",
+							"host": [
+								"{{MANGOIT_BASE_URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPasswordByID",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"12345678\",\r\n    \"newPassword\":\"12345678\",\r\n    \"confirmPassword\":\"12345678\",\r\n    \"id\":\"626a338793afd5d45490e61a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPasswordByToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\":\"12345678\",\r\n    \"confirmPassword\":\"12345678\",\r\n    \"token\":\"1f97200c863650144719630fb9a7c28e59c3d3c709d416834e5b1bc4a3e94cf0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendMail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Jhon25@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/sendMail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sendMail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Counsellor",
+			"item": [
+				{
+					"name": "searchCouncellor",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/searchUser/m",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"searchUser",
+								"m"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTime",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/startTime/626fa7e6ad68ceef529b7089",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"startTime",
+								"626fa7e6ad68ceef529b7089"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stopTime",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/stopTime/626fa7e6ad68ceef529b7089",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"stopTime",
+								"626fa7e6ad68ceef529b7089"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCouncellorStudent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/getStu/6270e059ca7b6ebd2488b0c0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"getStu",
+								"6270e059ca7b6ebd2488b0c0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "accessChat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"6270df77ca7b6ebd2488b06a\",\n    \"recieverId\":\"6270dfb8ca7b6ebd2488b076\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/accessChat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"accessChat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "chat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"6270dfb8ca7b6ebd2488b076\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/chat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"chat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendMessage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chatId\":\"62739301a29256978a21af25\",\n    \"content\":\"m bhi badiya hu\",\n    \"senderId\":\"6270dfb8ca7b6ebd2488b076\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/sendMessage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"sendMessage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMessage/chatid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://aelix.herokuapp.com/api/getMessage/628f601c5994447ef8fe196d",
+							"protocol": "https",
+							"host": [
+								"aelix",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"getMessage",
+								"628f601c5994447ef8fe196d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "groupChat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"name\":\"mynewGroup\",\n \"users\":[\"6270dfe3ca7b6ebd2488b082\",\"6270dfb8ca7b6ebd2488b076\",\"6270df77ca7b6ebd2488b06a\"],\n \"adminId\":\"6270df77ca7b6ebd2488b06a\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/groupChat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"groupChat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeGroupUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"6270dfe3ca7b6ebd2488b082\",\n    \"chatId\":\"62739301a29256978a21af25\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/removeGroupUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"removeGroupUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "renameGroup",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chatId\":\"62739301a29256978a21af25\",\n    \"chatName\":\"helloGyus\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/renameGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"renameGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUserInGroup",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"6270dfe3ca7b6ebd2488b082\",\n    \"chatId\":\"62739301a29256978a21af25\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/addUserInGroup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"addUserInGroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "status get online",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impob24zNUBnbWFpbC5jb20iLCJfaWQiOiI2MzE1ZTBiZDJlNDlmZjI5Nzg0ZTc4ZGIiLCJpYXQiOjE2Nzg4NTMyNzIsImV4cCI6MTY3ODkzOTY3Mn0.b0c7F_UWL18dVU8rA-idCUVLUBpTA6_vGsfk7_STFKE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fromDate\": \"2023-03-15\",\n    \"toDate\": \"2023-03-15\",\n    \"searchName\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6020/api/getPreviousRecords/640eb5b9193bc3871926556d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6020",
+							"path": [
+								"api",
+								"getPreviousRecords",
+								"640eb5b9193bc3871926556d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Impob24yNUBnbWFpbC5jb20iLCJfaWQiOiI2MzE1ZTBiZDJlNDlmZjI5Nzg0ZTc4ZGIiLCJpYXQiOjE2NzYwMDc5MjQsImV4cCI6MTY3NjA5NDMyNH0.jA30iP1hfgbxlfwbj0xrJpDG_Gyg0Tj1LOUeE37I15M"
+		},
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:4001/api/"
+		},
+		{
+			"key": "SERVER_BASE_URL",
+			"value": "https://api-aelix.mangoitsol.com/api/"
+		},
+		{
+			"key": "MANGOIT_BASE_URL",
+			"value": "http://localhost:6020/api/",
+			"type": "string"
+		}
+	]
+}
