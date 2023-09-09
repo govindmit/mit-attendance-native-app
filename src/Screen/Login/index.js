@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {userLogin} from '../../API/auth';
 
+
 import {
   View,
   Text,
@@ -56,10 +57,10 @@ const Login = () => {
         console.log('API Response:', response);
   
         if (response.data) {
-          const data = response.data;
-          const role = data.role;
-          const token = data.token;
-  
+           
+          const role=response.data.role;
+          const token=response.data.token;
+
           console.log('Login successful');
           console.log('Role:', role);
           

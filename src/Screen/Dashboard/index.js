@@ -98,13 +98,12 @@ const Dashboard = () => {
                     fontSize: 15,
                     fontWeight: '700',
                   }}>
-                  Total Student{data.totalcount}
+                  Total Student
                 </Text>
-               
+                
+                <Text style={{fontSize:40, textAlign:'center',color:'#005CB3'}}>{data.totalcount}</Text>
               </View>
-            {/* <View>
-                  {data.map(item => key(item.totalabsent))}
-                </View>  */}
+            
               <View
                 style={{
                   flex: 1,
@@ -119,8 +118,9 @@ const Dashboard = () => {
                     fontSize: 15,
                     fontWeight: '700',
                   }}>
-                  Present Student {data.totalpresent}
+                  Present Student 
                 </Text>
+                <Text style={{fontSize:40, textAlign:'center',color:'#005CB3'}}>{data.totalpresent}</Text>
               </View>
             </View>
             {/* Two More Boxes Horizontally */}
@@ -139,8 +139,9 @@ const Dashboard = () => {
                     fontSize: 15,
                     fontWeight: '700',
                   }}>
-                  Absent Student{data.totalabsent}
+                  Absent Student
                 </Text>
+                <Text style={{fontSize:40, textAlign:'center',color:'#005CB3'}}>{data.totalabsent}</Text>
               </View>
               <View
                 style={{
@@ -156,8 +157,9 @@ const Dashboard = () => {
                     fontSize: 15,
                     fontWeight: '700',
                   }}>
-                  Out of Class{data.totalout}
+                  Out of Class
                 </Text>
+                <Text style={{fontSize:40, textAlign:'center',color:'#005CB3'}}>{data.totalout}</Text>
               </View>
             </View>
           </View>

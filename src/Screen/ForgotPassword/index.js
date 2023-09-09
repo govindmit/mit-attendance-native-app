@@ -14,7 +14,6 @@ const ForgotPassword = () => {
   const navigation = useNavigation();
 
   const [email, setemail] = useState('');
-  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const [emailError, setemailError] = useState('');

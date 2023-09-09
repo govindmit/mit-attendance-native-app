@@ -1,17 +1,11 @@
 import 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import SplashScreen from 'react-native-splash-screen';
-import Login from './src/component/Login/index';
-import ForgotPassword from './src/component/ForgotPassword';
-import Dashboard from './src/component/Dashboard';
-
 import React, {useEffect} from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import SplashScreen from 'react-native-splash-screen';
+import DrawerNavigator from './src/Screen/NavigationBar/DrawerNavigation';
 
 
 const App = () => {
-  const Stack = createStackNavigator();
-
   useEffect(() => {
     setTimeout(() => {
       SplashScreen.hide();
@@ -20,12 +14,8 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen  name="ForgotPassword" component={ForgotPassword} />
-        <Stack.Screen name="Dashboard" component={Dashboard} />
-        
-       </Stack.Navigator>
+      
+      <DrawerNavigator />
     </NavigationContainer>
   );
 };
