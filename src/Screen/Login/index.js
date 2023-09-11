@@ -3,7 +3,6 @@ import React, {useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {userLogin} from '../../API/auth';
 
-
 import {
   View,
   Text,
@@ -12,6 +11,7 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
+
 
 const Login = () => {
   const navigation = useNavigation();
@@ -50,22 +50,26 @@ const Login = () => {
       const formData = new FormData();
       formData.append('username', email);
       formData.append('password', password);
-  
+
       const response = await userLogin(formData);
-  
+
       if (response) {
-        console.log('API Response:', response);
-  
+        console.log('API Response:', response.data);
+
         if (response.data) {
-           
-          const role=response.data.role;
-          const token=response.data.token;
+          console.log(response.data.role);
+
+           const token = response.data.token;
 
           console.log('Login successful');
-          console.log('Role:', role);
-          
+
           AsyncStorage.setItem('token', token);
-          navigation.navigate('Dashboard');
+
+          if (response.data.role === 'manager') {
+            navigation.navigate('Dashboard');
+          } else {
+            navigation.navigate('DashboardManager');
+          }
         } else {
           console.log('Login Failed: Response does not contain data.');
         }
@@ -76,10 +80,7 @@ const Login = () => {
       console.log('Error:', error.message);
     }
   };
-  
 
- 
-  
   return (
     <View style={{height: '100%', flex: 1}}>
       <View style={{height: '50%'}}>

@@ -1,45 +1,37 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import Stacknavigation from './StackNavigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Home from './Home';
-import Profile from './Profile';
+import Myprofile from './Myprofile';
+import Schoolinfo from './Schoolinfo';
+import Students from './Students';
+import Manage_class from './Manage_class';
+import Councellor from './Councellor';
+import Chat from './Chat';
+import Change_Password from './Change_Password';
+import Pin from './Pin';
+import Logout from './Logout';
+import Dashboard from '../Dashboard';
 
 const Drawer = createDrawerNavigator();
 
-const DrawerNavigator = () => {
+const DrawerNavigation = () => {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen
-        name="Home"
-        component={Home}
-        options={{
-          drawerIcon: ({focused, color, size}) => (
-            <Icon name="windows" size={20} style={{color: '#005CB3'}} />
-          ),
-        }}
-      />
+    <Drawer.Navigator initialRouteName="Dashboard">
+      <Drawer.Screen name="Dashboard" component={Dashboard} />
+
       <Drawer.Screen
         name=" My Profile"
-        component={Profile}
+        component={Myprofile}
         options={{
           drawerIcon: ({focused, color, size}) => (
             <Icon name="user" size={20} style={{color: '#005CB3'}} />
           ),
         }}
       />
-      <Drawer.Screen
-        name=" Login"
-        component={Profile}
-        options={{
-          drawerIcon: ({focused, color, size}) => (
-            <Icon name="user" size={20} style={{color: '#005CB3'}} />
-          ),
-        }}
-      />
+
       <Drawer.Screen
         name="School Info"
-        component={Stacknavigation}
+        component={Schoolinfo}
         options={{
           drawerIcon: ({focused, color, size}) => (
             <Icon name="university" size={20} style={{color: '#005CB3'}} />
@@ -48,42 +40,38 @@ const DrawerNavigator = () => {
       />
 
       <Drawer.Screen
-        name="students"
-        component={Stacknavigation}
+        name="Students"
+        component={Students}
         options={{
           drawerIcon: ({focused, color, size}) => (
-            <Icon name="user-o" size={20} style={{color: '#005CB3'}} />
+            <Icon name="university" size={20} style={{color: '#005CB3'}} />
           ),
         }}
       />
 
       <Drawer.Screen
         name="Manage Class"
-        component={Stacknavigation}
+        component={Manage_class}
         options={{
           drawerIcon: ({focused, color, size}) => (
-            <Icon
-              name="eercast"
-              size={20}
-              style={{color: '#005CB3'}}
-            />
+            <Icon name="eercast" size={20} style={{color: '#005CB3'}} />
           ),
         }}
       />
 
       <Drawer.Screen
         name="Councellor"
-        component={Stacknavigation}
+        component={Councellor}
         options={{
           drawerIcon: ({focused, color, size}) => (
-            <Icon name="sign-in" size={20} style={{color: '#005CB3'}} />
+            <Icon name="sign-in" size={20} style={{color: '#005CB3',}} />
           ),
         }}
       />
 
       <Drawer.Screen
         name="Chat"
-        component={Stacknavigation}
+        component={Chat}
         options={{
           drawerIcon: ({focused, color, size}) => (
             <Icon name="envelope-o" size={20} style={{color: '#005CB3'}} />
@@ -93,7 +81,7 @@ const DrawerNavigator = () => {
 
       <Drawer.Screen
         name="Change password"
-        component={Stacknavigation}
+        component={Change_Password}
         options={{
           drawerIcon: ({focused, color, size}) => (
             <Icon name="unlock" size={20} style={{color: '#005CB3'}} />
@@ -103,7 +91,7 @@ const DrawerNavigator = () => {
 
       <Drawer.Screen
         name="Pin"
-        component={Stacknavigation}
+        component={Pin}
         options={{
           drawerIcon: ({focused, color, size}) => (
             <Icon name="gamepad" size={20} style={{color: '#005CB3'}} />
@@ -113,7 +101,7 @@ const DrawerNavigator = () => {
 
       <Drawer.Screen
         name="LogOut"
-        component={Stacknavigation}
+        component={Logout}
         options={{
           drawerIcon: ({focused, color, size}) => (
             <Icon name="sign-in" size={20} style={{color: '#005CB3'}} />
@@ -124,4 +112,4 @@ const DrawerNavigator = () => {
   );
 };
 
-export default DrawerNavigator;
+export default DrawerNavigation;

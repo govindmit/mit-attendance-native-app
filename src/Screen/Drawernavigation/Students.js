@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 
-const Home = ({ navigation }) => {
+const Students= ({ navigation }) => {
   return (
     <View style={styles.center}>
 
@@ -23,4 +23,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default Students;

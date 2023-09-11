@@ -1,0 +1,11 @@
+Admin (Manager)
+Username - jhonmanager
+Email -  jhon@gmail.in
+Password - Mus@2121
+
+User (Counsellor)
+Username - GovindCouncellor
+Email - govind.councellor@yopmail.com
+Password - Mus@2121
+➕
+Web App URL - http://attendance.mangoitsol.com/

@@ -33,5 +33,3 @@ export async function fetchDataFromAPI(props) {
     return error.response;
   }
 }
-   
- 

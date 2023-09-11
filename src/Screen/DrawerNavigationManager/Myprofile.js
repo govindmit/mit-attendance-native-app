@@ -1,11 +1,15 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-const Profile = ({ navigation }) => {
+
+const Myprofile = ({ navigation }) => {
   return (
     <View style={styles.center}>
-      <Text>This is the home screen</Text>
+
+        
+      <Text style={{color:'black',fontSize:20}}>This is the Chat screen</Text>
       
+     
     </View>
   );
 };
@@ -16,9 +20,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    fontSize:20,
-    color:'black'
   },
 });
 
-export default Profile;
+export default Myprofile;
