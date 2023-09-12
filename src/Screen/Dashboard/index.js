@@ -1,20 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome6';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
 import {fetchDataFromAPI} from '../../API/auth';
+import {getTokenFromStorage} from '../../API/auth';
 
 const Dashboard = () => {
   const navigation = useNavigation();
 
-  const[data,setData]=useState('')
-  
-  console.log(data.totalabsent)
-            
-  
- 
- 
+  const [data, setData] = useState('');
+
+  console.log(data.totalabsent);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -24,28 +20,13 @@ const Dashboard = () => {
           const response = await fetchDataFromAPI(token);
 
           if (response) {
-          setData(response.data)
-         
-            
+            setData(response.data);
           } else {
             console.log('error', token);
           }
         }
       } catch (error) {
         console.error('Error fetching data:', error);
-      }
-    };
-
-    const getTokenFromStorage = async () => {
-      try {
-        const token = await AsyncStorage.getItem('token', token);
-        console.log('token', token);
-        if (!token) {
-          navigation.navigate('Login');
-        }
-        return token;
-      } catch (error) {
-        console.error('Error retrieving token from AsyncStorage:', error);
       }
     };
 
@@ -68,7 +49,7 @@ const Dashboard = () => {
             marginTop: 10,
             color: 'black',
             marginHorizontal: 110,
-          
+
             fontSize: 20,
             fontWeight: '700',
           }}>
@@ -104,10 +85,13 @@ const Dashboard = () => {
                   }}>
                   Total Student
                 </Text>
-                
-                <Text style={{fontSize:40, textAlign:'center',color:'#005CB3'}}>{data.totalcount}</Text>
+
+                <Text
+                  style={{fontSize: 40, textAlign: 'center', color: '#005CB3'}}>
+                  {data.totalcount}
+                </Text>
               </View>
-            
+
               <View
                 style={{
                   flex: 1,
@@ -122,9 +106,12 @@ const Dashboard = () => {
                     fontSize: 15,
                     fontWeight: '700',
                   }}>
-                  Present Student 
+                  Present Student
                 </Text>
-                <Text style={{fontSize:40, textAlign:'center',color:'#005CB3'}}>{data.totalpresent}</Text>
+                <Text
+                  style={{fontSize: 40, textAlign: 'center', color: '#005CB3'}}>
+                  {data.totalpresent}
+                </Text>
               </View>
             </View>
             {/* Two More Boxes Horizontally */}
@@ -145,7 +132,10 @@ const Dashboard = () => {
                   }}>
                   Absent Student
                 </Text>
-                <Text style={{fontSize:40, textAlign:'center',color:'#005CB3'}}>{data.totalabsent}</Text>
+                <Text
+                  style={{fontSize: 40, textAlign: 'center', color: '#005CB3'}}>
+                  {data.totalabsent}
+                </Text>
               </View>
               <View
                 style={{
@@ -163,7 +153,10 @@ const Dashboard = () => {
                   }}>
                   Out of Class
                 </Text>
-                <Text style={{fontSize:40, textAlign:'center',color:'#005CB3'}}>{data.totalout}</Text>
+                <Text
+                  style={{fontSize: 40, textAlign: 'center', color: '#005CB3'}}>
+                  {data.totalout}
+                </Text>
               </View>
             </View>
           </View>

@@ -1,110 +1,171 @@
-{
-    "data": [
-        {
-            "DOB": "1998-02-02T00:00:00+05:30",
-            "__v": 0,
-            "_id": "6417ffe50c7c9910a52ce75b",
-            "assignClass": [Object
-            ],
-            "attaindence": [Object
-            ],
-            "city": "indore",
-            "country": "62c3ddf4211090cd519f550a",
-            "emergency": [Array
-            ],
-            "fatherName": "testing",
-            "image": "uploads/1679396310944twenty-five.jpeg",
-            "lastName": "jain",
-            "medical": "test",
-            "name": "Kapil",
-            "state": "62c3decc211090cd519f551a",
-            "street_Address": "114, bhawarkuan",
-            "zip_code": 45704
-        },
-        {
-            "DOB": "2016-11-08T00:00:00+05:30",
-            "__v": 0,
-            "_id": "6418439a58176c892dc3e9c6",
-            "assignClass": [Object
-            ],
-            "attaindence": [Object
-            ],
-            "city": "Odit sunt dignissim",
-            "country": "62c3ddf4211090cd519f550a",
-            "emergency": [Array
-            ],
-            "fatherName": "Alfonso ",
-            "lastName": "Calderon",
-            "medical": "Nothing",
-            "name": "Herrod",
-            "state": "62c3deea211090cd519f5520",
-            "street_Address": "Numquam pariatur Vo",
-            "zip_code": 91545
-        },
-        {
-            "DOB": "1998-02-04T00:00:00+05:30",
-            "__v": 0,
-            "_id": "641991c6c96c2685a71aaca4",
-            "assignClass": [Object
-            ],
-            "attaindence": [Object
-            ],
-            "city": "indore",
-            "country": "62c3ddf4211090cd519f550a",
-            "emergency": [Array
-            ],
-            "fatherName": "testing",
-            "image": "uploads/1679397318250twenty-one.jpeg",
-            "lastName": "jain",
-            "medical": "",
-            "name": "Attn",
-            "state": "62c3df17211090cd519f552c",
-            "street_Address": "114, bhawarkuan",
-            "zip_code": 45204
-        },
-        {
-            "DOB": "2021-04-01T00:00:00+05:30",
-            "__v": 0,
-            "_id": "64352a1bc23b992e5d97aa77",
-            "assignClass": [Object
-            ],
-            "attaindence": [Object
-            ],
-            "city": "New York",
-            "country": "62c3ddf4211090cd519f550a",
-            "emergency": [Array
-            ],
-            "fatherName": "S Folbig",
-            "lastName": "Mendis",
-            "medical": "Test ",
-            "name": "Shawn",
-            "state": "62c3df80211090cd519f5544",
-            "street_Address": "671 Apt, 6th street",
-            "zip_code": 94575
-        },
-        {
-            "DOB": "2009-03-11T00:00:00+05:30",
-            "__v": 0,
-            "_id": "64352bb1c23b992e5d97aad2",
-            "assignClass": [Object
-            ],
-            "attaindence": [Object
-            ],
-            "city": "California",
-            "country": "62c3ddf4211090cd519f550a",
-            "emergency": [Array
-            ],
-            "fatherName": "Joseph",
-            "lastName": "Shelly",
-            "medical": "Typhoid",
-            "name": "Kim",
-            "state": "62c3de38211090cd519f550c",
-            "street_Address": "Apt 577",
-            "zip_code": 94757
-        }
-    ],
-    "totalabsent": 0,
-    "totalcount": 5,
-    "totalout": 0,
-    "totalpresent": 0
-}
+[
+  {
+    "__v": 0,
+    "_id": "6315e0bd2e49ff29784e78db",
+    "city": "California",
+    "country": "62c3ddf4211090cd519f550a",
+    "email": "jhon@yopmail.com",
+    "expireToken": "2023-04-11T06:55:45.680Z",
+    "image": "uploads/1679398166177twenty-one.jpeg",
+    "name": "Jhon Manager",
+    "phone": 14546465469,
+    "readBy": 0,
+    "resetToken": "",
+    "role": {"__v": 0, "_id": "626135b2fc27a5aec6e731ac", "name": "manager"},
+    "state": "62c3de7e211090cd519f550e",
+    "street_Address": "44 A Down, Lucas street",
+    "studentCount": 0,
+    "username": "jhonmanager",
+    "zip_code": 93456
+  },
+  {
+    "__v": 0,
+    "_id": "640065efa37347bdfc2bf17f",
+    "classId": {
+      "__v": 0,
+      "_id": "6417ff790c7c9910a52ce708",
+      "className": "Class Azur"
+    },
+    "email": "govind.councellor@yopmail.com",
+    "expireToken": "2023-09-07T15:02:01.994Z",
+    "image": "uploads/1680083660279image_cropper_1680083655028.jpg",
+    "lastname": "Councellor",
+    "name": "Govind",
+    "phone": 916388552266,
+    "readBy": 0,
+    "resetToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImdvdmluZC5jb3VuY2VsbG9yQHlvcG1haWwuY29tIiwiX2lkIjoiNjQwMDY1ZWZhMzczNDdiZGZjMmJmMTdmIiwiaWF0IjoxNjk0MDk1MzIxLCJleHAiOjE2OTQwOTg5MjF9.y27ijazaF1sn9Om1Z7l5grnIT4LNou__nFMkEkDXvlE",
+    "role": {"__v": 0, "_id": "6261365557aa085ea6db84e9", "name": "counsellor"},
+    "studentCount": 1,
+    "username": "GovindCouncellor",
+    "zip_code": null
+  },
+  {
+    "__v": 0,
+    "_id": "6419716bc96c2685a71a9ffc",
+    "classId": {
+      "__v": 0,
+      "_id": "6423e734c6d753ef4b705108",
+      "className": "class unassigned"
+    },
+    "email": "dev@gmail.com",
+    "lastname": "disoza",
+    "name": "david",
+    "phone": 917000456456,
+    "readBy": 0,
+    "role": {"__v": 0, "_id": "6261365557aa085ea6db84e9", "name": "counsellor"},
+    "studentCount": 0,
+    "username": "dev"
+  },
+  {
+    "__v": 0,
+    "_id": "64228481c34158da6c5e774a",
+    "classId": {
+      "__v": 0,
+      "_id": "6419449bc96c2685a71a867a",
+      "className": "Class Html"
+    },
+    "email": "pluggeditindia@gmail.c",
+    "lastname": "Tiwari",
+    "name": "Yugank",
+    "phone": 13534645756,
+    "readBy": 0,
+    "role": {"__v": 0, "_id": "6261365557aa085ea6db84e9", "name": "counsellor"},
+    "studentCount": 1,
+    "username": "testing"
+  },
+  {
+    "__v": 0,
+    "_id": "6423e3e4c6d753ef4b704e94",
+    "classId": {
+      "__v": 0,
+      "_id": "64228bc6c34158da6c5e783d",
+      "className": "Class yahoo"
+    },
+    "email": "zonapyra@mailinator.com",
+    "expireToken": "2023-03-29T10:08:29.897Z",
+    "lastname": "Tiwari",
+    "name": "Yugank",
+    "phone": 13534645756,
+    "readBy": 0,
+    "resetToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InpvbmFweXJhQG1haWxpbmF0b3IuY29tIiwiX2lkIjoiNjQyM2UzZTRjNmQ3NTNlZjRiNzA0ZTk0IiwiaWF0IjoxNjgwMDgwOTA5LCJleHAiOjE2ODAwODQ1MDl9.SrlLJHVGJsChAZNGMJMZpDK2J1OGzooYBoq4HyMTtS4",
+    "role": {"__v": 0, "_id": "6261365557aa085ea6db84e9", "name": "counsellor"},
+    "studentCount": 0,
+    "username": "testing@yopmail.com"
+  },
+  {
+    "__v": 0,
+    "_id": "6423eb0cc6d753ef4b7052b6",
+    "classId": {
+      "__v": 0,
+      "_id": "6423e734c6d753ef4b705108",
+      "className": "class unassigned"
+    },
+    "email": "pluggitindia@gmail.com",
+    "image": "uploads/1680076392171Personal Detail (1).png",
+    "lastname": "Tiwari",
+    "name": "Yugank",
+    "phone": 13534645756,
+    "readBy": 0,
+    "role": {"__v": 0, "_id": "6261365557aa085ea6db84e9", "name": "counsellor"},
+    "studentCount": 0,
+    "username": "testuu"
+  },
+  {
+    "__v": 0,
+    "_id": "64240aa3a7c1db29f64f23d5",
+    "classId": {
+      "__v": 0,
+      "_id": "6423e734c6d753ef4b705108",
+      "className": "class unassigned"
+    },
+    "email": "yusufggg@mailinator.com",
+    "image": "uploads/1680083619304image_cropper_1680083474740.jpg",
+    "lastname": "new",
+    "name": "test",
+    "phone": 14555424425,
+    "readBy": 0,
+    "role": {"__v": 0, "_id": "6261365557aa085ea6db84e9", "name": "counsellor"},
+    "studentCount": 0,
+    "username": "testernew"
+  },
+  {
+    "__v": 0,
+    "_id": "643521e8c23b992e5d97a9a8",
+    "classId": {
+      "__v": 0,
+      "_id": "641944a9c96c2685a71a867d",
+      "className": "Class Java"
+    },
+    "email": "testcounsellor@yopmail.com",
+    "expireToken": "2023-04-11T12:23:12.390Z",
+    "image": "uploads/1681203688098unnamed11.png",
+    "lastname": "Counsellor",
+    "name": "Test",
+    "phone": 19985563222,
+    "readBy": 1,
+    "resetToken": "",
+    "role": {"__v": 0, "_id": "6261365557aa085ea6db84e9", "name": "counsellor"},
+    "studentCount": 3,
+    "username": "TestCounsellor"
+  },
+  {
+    "__v": 0,
+    "_id": "64f95b5487a49db0db54a836",
+    "classId": {
+      "__v": 0,
+      "_id": "64360752c23b992e5d97b262",
+      "className": "Python"
+    },
+    "email": "anita@yopmail.com",
+    "expireToken": "2023-09-07T09:44:12.021Z",
+    "image": "uploads/1694063443914eight.png",
+    "lastname": "Gandhwani",
+    "name": "Anita",
+    "phone": 19355435234,
+    "readBy": 0,
+    "resetToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaXRhQHlvcG1haWwuY29tIiwiX2lkIjoiNjRmOTViNTQ4N2E0OWRiMGRiNTRhODM2IiwiaWF0IjoxNjk0MDc2MjUyLCJleHAiOjE2OTQwNzk4NTJ9.zkvy-3BtLCNam2BTyshT_frbmsVYlVEVP5cLa9uXSCw",
+    "role": {"__v": 0, "_id": "6261365557aa085ea6db84e9", "name": "counsellor"},
+    "studentCount": 0,
+    "username": "anitaGandhwani"
+  }
+]

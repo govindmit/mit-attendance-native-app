@@ -1,7 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {useState} from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {userLogin} from '../../API/auth';
+import React, {useContext, useState} from 'react';
+//import AsyncStorage from '@react-native-async-storage/async-storage';
+//import {userLogin} from '../../API/auth';
+
+import {Context as AuthContext} from '../../context/AuthContext';
 
 import {
   View,
@@ -12,17 +14,18 @@ import {
   ScrollView,
 } from 'react-native';
 
-
 const Login = () => {
   const navigation = useNavigation();
 
-  const [email, setemail] = useState('');
+  const [username, setusername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const [emailError, setemailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
+  const {state, signin} = useContext(AuthContext);
+  
   const emailValidator = () => {
     if (email === '') {
       setemailError('Email Field cannot be empty');
@@ -42,40 +45,39 @@ const Login = () => {
       return true;
     }
   };
-  console.log(email);
-  console.log(password);
+  
 
   const handleLogin = async () => {
     try {
-      const formData = new FormData();
-      formData.append('username', email);
-      formData.append('password', password);
+      
 
-      const response = await userLogin(formData);
+       await signin({username, password})
 
-      if (response) {
-        console.log('API Response:', response.data);
+      // const response = await userLogin(formData);
 
-        if (response.data) {
-          console.log(response.data.role);
+      // if (response) {
+      //   console.log('API Response:', response.data);
 
-           const token = response.data.token;
+      //   if (response.data) {
+        
+      //     console.log('Login successful');
+      //     const token = response.data.token;
 
-          console.log('Login successful');
+      //     AsyncStorage.setItem('token', token);
 
-          AsyncStorage.setItem('token', token);
+      //     // if (response.data.role === 'manager') {
+      //     //   navigation.navigate('Dashboard');
+      //     // } else {
+      //     //   navigation.navigate('DashboardManager');
+      //     // }
+      //   } else {
+      //     console.log('Login Failed: Response does not contain data.');
+      //   }
+      // } else {
+      //   console.log('Login Failed: Empty response.');
+      // }
 
-          if (response.data.role === 'manager') {
-            navigation.navigate('Dashboard');
-          } else {
-            navigation.navigate('DashboardManager');
-          }
-        } else {
-          console.log('Login Failed: Response does not contain data.');
-        }
-      } else {
-        console.log('Login Failed: Empty response.');
-      }
+
     } catch (error) {
       console.log('Error:', error.message);
     }

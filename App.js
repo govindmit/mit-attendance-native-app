@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import SplashScreen from 'react-native-splash-screen';
 import Stacknavigation from './src/Screen/Stacknavigation';
 
+
 const App = () => {
   useEffect(() => {
     setTimeout(() => {
@@ -14,7 +15,6 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stacknavigation/>
-      
     </NavigationContainer>
   );
 };
