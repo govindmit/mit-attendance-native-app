@@ -3,40 +3,41 @@ import {View, Text, TextInput, Button} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather';
 import {getuserFromAPI} from '../../API/auth';
-import {getTokenFromStorage} from '../../API/auth';
+import { useContext } from 'react';
+
+import {UserDetailContext} from '../../../App';
 
 const Councellor = () => {
   const [searchText, setSearchText] = useState('');
 
   const [userData, setUserData] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const token = await getTokenFromStorage();
+  const {userDetail} = useContext(UserDetailContext);
 
-        if (token) {
-          const response = await getuserFromAPI(token);
 
-          if (response) {
-            setUserData(data.filter((e) => e.role.name === "counsellor"));
-          } else {
-            console.log('error', token);
-          }
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
+  const getData = async () => {
+    try {
+      console.log(userDetail)
+      const response = await getuserFromAPI(userDetail.token);
+
+      if (response) {
+
+        setUserData (response) //(data.filter(e => e.role.name === 'counsellor'));
+      } else {
+        console.log('error', token);
       }
-    };
-
-    fetchData();
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+  console.log('userData', userData)
+  useEffect(() => {
+    getData();
   }, []);
- 
+
   const handleSearch = () => {};
 
-  const handleAddCounselor = () => {
+  const handleAddCounsellor = () => {
     console.log('Adding a new counselor');
-
-    
   };
   return (
     <ScrollView style={{flex: 1}}>
@@ -105,12 +106,12 @@ const Councellor = () => {
           <Button
             color={'#005CB3'}
             title="Add Counselor"
-            onPress={handleAddCounselor}
+            onPress={handleAddCounsellor}
           />
         </View>
       </View>
 
-       <View style={{flex: 1}}>
+      <View style={{flex: 1}}>
         <View
           style={{
             flexDirection: 'row',
@@ -121,24 +122,17 @@ const Councellor = () => {
           }}>
           <Text style={{flex: 1, fontWeight: 'bold', fontSize: 15}}>Name</Text>
           <Text style={{flex: 1, fontWeight: 'bold', fontSize: 15}}>Class</Text>
-          <Text style={{flex: 1, fontWeight: 'bold', fontSize: 15}}>Action</Text>
-          {console.log('userData',userData)}
+          <Text style={{flex: 1, fontWeight: 'bold', fontSize: 15}}>
+            Action
+          </Text>
+         
           {/* {
           userData.map( user=>{
             console.log(user.role)
           })
           } */}
         </View>
-</View>
-
-       
-           
-       
-
-
- 
-
-    
+      </View>
     </ScrollView>
   );
 };

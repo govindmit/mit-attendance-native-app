@@ -1,37 +1,34 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {View, Text} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+
 import {fetchDataFromAPI} from '../../API/auth';
-import {getTokenFromStorage} from '../../API/auth';
+
+import {UserDetailContext} from '../../../App';
 
 const Dashboard = () => {
-  const navigation = useNavigation();
-
+  const {userDetail} = useContext(UserDetailContext);
   const [data, setData] = useState('');
 
   console.log(data.totalabsent);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const token = await getTokenFromStorage();
+  const fetchData = async () => {
+    try {
+      const response = await fetchDataFromAPI(userDetail.token);
 
-        if (token) {
-          const response = await fetchDataFromAPI(token);
-
-          if (response) {
-            setData(response.data);
-          } else {
-            console.log('error', token);
-          }
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
+      if (response) {
+        setData(response.data);
+      } else {
+        console.log('error', userDetail.token);
       }
-    };
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
+  useEffect(() => {
     fetchData();
   }, []);
+  console.log(userDetail, 'uerdetia');
 
   return (
     <View style={{height: '100%', flex: 1}}>
@@ -39,7 +36,7 @@ const Dashboard = () => {
         {/* <Icon
           name="align-left"
           size={30}
-           style={{marginLeft: 40, marginTop: 40, color: 'black'}}
+          style={{marginLeft: 40, marginTop: 40, color: 'black'}}
           onPress={() => {
             navigation.openDrawer();
           }}

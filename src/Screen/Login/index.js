@@ -3,8 +3,6 @@ import React, {useContext, useState} from 'react';
 //import AsyncStorage from '@react-native-async-storage/async-storage';
 //import {userLogin} from '../../API/auth';
 
-import {Context as AuthContext} from '../../context/AuthContext';
-
 import {
   View,
   Text,
@@ -13,25 +11,24 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
+import {userLogin} from '../../API/auth';
+import {UserDetailContext} from '../../../App';
 
 const Login = () => {
   const navigation = useNavigation();
+  const {setUserDetail} = useContext(UserDetailContext);
 
   const [username, setusername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
-  const [emailError, setemailError] = useState('');
+  const [usernameError, setusernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  const {state, signin} = useContext(AuthContext);
-  
-  const emailValidator = () => {
-    if (email === '') {
-      setemailError('Email Field cannot be empty');
+  const usernameValidator = () => {
+    if (username === '') {
+      setusernameError('Email Field cannot be empty');
       return false;
     } else {
-      setemailError('');
+      setusernameError('');
       return true;
     }
   };
@@ -45,39 +42,21 @@ const Login = () => {
       return true;
     }
   };
-  
-
   const handleLogin = async () => {
     try {
-      
-
-       await signin({username, password})
-
-      // const response = await userLogin(formData);
-
-      // if (response) {
-      //   console.log('API Response:', response.data);
-
-      //   if (response.data) {
-        
-      //     console.log('Login successful');
-      //     const token = response.data.token;
-
-      //     AsyncStorage.setItem('token', token);
-
-      //     // if (response.data.role === 'manager') {
-      //     //   navigation.navigate('Dashboard');
-      //     // } else {
-      //     //   navigation.navigate('DashboardManager');
-      //     // }
-      //   } else {
-      //     console.log('Login Failed: Response does not contain data.');
-      //   }
-      // } else {
-      //   console.log('Login Failed: Empty response.');
-      // }
-
-
+      const reqData = {
+        username,
+        password,
+      };
+      await userLogin(reqData)
+        .then(res => {
+          //setUserDetail(res);
+         console.log(res)
+          console.log("Login successfull");
+        })
+        .catch(err => {
+          console.log('error', err);
+        });
     } catch (error) {
       console.log('Error:', error.message);
     }
@@ -117,15 +96,15 @@ const Login = () => {
             }}
             underlineColorAndroid="transparent"
             placeholder="Please enter your email or username"
-            value={email}
+            value={username}
             onChangeText={text => {
-              setemail(text);
+              setusername(text);
             }}
-            onBlur={emailValidator}
+            onBlur={usernameValidator}
             placeholderTextColor="#6c757d"
             autoCapitalize="none"
           />
-          <Text style={{color: 'red'}}>{emailError}</Text>
+          <Text style={{color: 'red'}}>{usernameError}</Text>
 
           <TextInput
             style={{
@@ -163,7 +142,7 @@ const Login = () => {
               LOGIN
             </Text>
           </TouchableOpacity>
-          {error ? <Text style={{color: 'red'}}>{error}</Text> : null}
+          {/* {error ? <Text style={{color: 'red'}}>{error}</Text> : null} */}
 
           <TouchableOpacity
             onPress={() => navigation.navigate('ForgotPassword')}
