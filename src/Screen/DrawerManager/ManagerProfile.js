@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Image, StyleSheet,ScrollView } from 'react-native';
+import HomeIcon from '../HomeIconManager';
 
-const UserProfile = () => {
+const ManagerProfile = () => {
 const [firstName, setFirstName] = useState('');
 const [lastName, setLastName] = useState('');
 const [email, setEmail] = useState('');
@@ -82,6 +83,7 @@ style={styles.button}
 />
 
 </View>
+<HomeIcon/>
 </ScrollView>
 );
 };
@@ -118,4 +120,4 @@ marginTop: 20,
 },
 });
 
-export default UserProfile;
+export default ManagerProfile;

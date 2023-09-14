@@ -1,11 +1,10 @@
+
 import React, {useContext, useEffect} from 'react';
 import {View, Text} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {useNavigation} from '@react-navigation/native';
 import { UserDetailContext } from '../../../App';
 
-const Logout = () => {
-  const navigation = useNavigation();
+const LogoutCounsellor = () => {
+
   const {setUserDetail} = useContext(UserDetailContext);
   useEffect(() => {
     handleLogout();
@@ -14,8 +13,6 @@ const Logout = () => {
   const handleLogout = async () => {
     try {
       setUserDetail('')
-      // await AsyncStorage.removeItem('token');
-      // navigation.navigate('Login');
     } catch (error) {
       console.log('Error:', error.message);
     }
@@ -30,5 +27,5 @@ const Logout = () => {
   );
 };
 
-export default Logout;
+export default LogoutCounsellor;
 

@@ -1,7 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useContext, useState} from 'react';
-//import AsyncStorage from '@react-native-async-storage/async-storage';
-//import {userLogin} from '../../API/auth';
 
 import {
   View,
@@ -42,6 +40,7 @@ const Login = () => {
       return true;
     }
   };
+
   const handleLogin = async () => {
     try {
       const reqData = {
@@ -50,9 +49,8 @@ const Login = () => {
       };
       await userLogin(reqData)
         .then(res => {
-          //setUserDetail(res);
-         console.log(res)
-          console.log("Login successfull");
+          setUserDetail(res);
+          console.log('Login successfull');
         })
         .catch(err => {
           console.log('error', err);
@@ -61,7 +59,7 @@ const Login = () => {
       console.log('Error:', error.message);
     }
   };
-
+//setUserDetail('');
   return (
     <View style={{height: '100%', flex: 1}}>
       <View style={{height: '50%'}}>

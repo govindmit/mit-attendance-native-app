@@ -1,41 +1,35 @@
-// import React, {useState, useEffect, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import {View, Text} from 'react-native';
 
 import {fetchDataFromAPI} from '../../API/auth';
 
 import {UserDetailContext} from '../../../App';
 
-const DashboardManager = () => {
+const DashboardCounsellor = () => {
   const {userDetail} = useContext(UserDetailContext);
   const [data, setData] = useState('');
 
   console.log(data.totalabsent);
 
-
   const fetchData = async () => {
     try {
-      
-      if (userDetail?.token) {
-        const response = await fetchDataFromAPI(userDetail.token);
+      const response = await fetchDataFromAPI(userDetail.token);
 
-        if (response) {
-          setData(response.data);
-        } else {
-          console.log('error', userDetail.token);
-        }
+      if (response) {
+        setData(response.data);
+      } else {
+        console.log('error', userDetail.token);
       }
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
 
-
   useEffect(() => {
-    
     fetchData();
   }, []);
-console.log(userDetail,"uerdetia")
- 
+  console.log(userDetail, 'uerdetia');
+
   return (
     <View style={{height: '100%', flex: 1}}>
       <View style={{flexDirection: 'row'}}>
@@ -182,4 +176,4 @@ console.log(userDetail,"uerdetia")
     </View>
   );
 };
-export default DashboardManager;
+export default DashboardCounsellor;

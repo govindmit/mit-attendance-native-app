@@ -10,31 +10,6 @@ Password - Mus@2121
 ➕
 Web App URL - http://attendance.mangoitsol.com/
 
-
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      {!userDetail?.token ? (
-        <>
-          <Stack.Screen
-         
-            name="Login"
-            component={Login}
-          />
-        </>
-      ) : userDetail?.role !== 'manager' ? (
-        
-          <Stack.Screen
-            name="DashboardManager"
-            component={DrawerNavigationManager}
-          />
-       
-      ) : (
-        
-          <Stack.Screen name="Dashboard" component={DrawerNavigation} />
-       
-      )}
-    </Stack.Navigator>
-  );
-};
-
-export default Stacknavigation;
+figma-https://www.figma.com/file/R9VDLEoOiLgwxAcSRHUhdt/Untitled?type=design&node-id=232-1519&mode=design
+   
 

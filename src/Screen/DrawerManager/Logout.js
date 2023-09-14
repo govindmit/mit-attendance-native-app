@@ -1,10 +1,9 @@
-
 import React, {useContext, useEffect} from 'react';
 import {View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import { UserDetailContext } from '../../../App';
 
-const LogoutManager = () => {
+const Logout = () => {
   const navigation = useNavigation();
   const {setUserDetail} = useContext(UserDetailContext);
   useEffect(() => {
@@ -14,6 +13,8 @@ const LogoutManager = () => {
   const handleLogout = async () => {
     try {
       setUserDetail('')
+      // await AsyncStorage.removeItem('token');
+      // navigation.navigate('Login');
     } catch (error) {
       console.log('Error:', error.message);
     }
@@ -28,5 +29,5 @@ const LogoutManager = () => {
   );
 };
 
-export default LogoutManager;
+export default Logout;
 

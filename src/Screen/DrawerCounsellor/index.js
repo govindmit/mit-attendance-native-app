@@ -1,20 +1,20 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Myprofile from './Myprofile';
 import Chat from './Chat';
-import LogoutManager from './LogoutManager';
-import Dashboard from '../Dashboard';
+import LogoutManager from './LogoutCounsellor';
+import DashboardCounsellor from './DashboardCounsellor';
+
 
 const Drawer = createDrawerNavigator();
 
-const DrawerNavigationManager = () => {
+const DrawerCounsellor= () => {
   return (
     
-    <Drawer.Navigator initialRouteName="Dashboard">
-      <Drawer.Screen name="Dashboard" component={Dashboard} />
+    <Drawer.Navigator initialRouteName="DashboardCounsellor">
+      <Drawer.Screen name="DashboardCounsellor" component={DashboardCounsellor} />
 
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name=" My Profile"
         component={Myprofile}
         options={{
@@ -22,7 +22,7 @@ const DrawerNavigationManager = () => {
             <Icon name="user" size={20} style={{color: '#005CB3'}} />
           ),
         }}
-      />
+      /> */}
 
       <Drawer.Screen
         name="Chat"
@@ -47,4 +47,4 @@ const DrawerNavigationManager = () => {
   );
 };
 
-export default DrawerNavigationManager;
+export default DrawerCounsellor;

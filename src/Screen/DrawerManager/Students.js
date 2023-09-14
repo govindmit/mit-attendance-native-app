@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import HomeIcon from "../HomeIconManager";
 
 
 const Students= ({ navigation }) => {
@@ -9,7 +10,7 @@ const Students= ({ navigation }) => {
         
       <Text style={{color:'black',fontSize:20}}>This is the home screen</Text>
       
-     
+     <HomeIcon/>
     </View>
   );
 };

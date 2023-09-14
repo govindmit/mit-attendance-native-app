@@ -1,15 +1,16 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import HomeIcon from "../HomeIconManager";
 
 
-const Chat = ({ navigation }) => {
+const Pin = () => {
   return (
     <View style={styles.center}>
 
         
-      <Text style={{color:'black',fontSize:20}}>This is the Chat screen</Text>
+      <Text style={{color:'black',fontSize:20}}>This is the Pin screen</Text>
       
-     
+     <HomeIcon/>
     </View>
   );
 };
@@ -23,4 +24,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Chat;
+export default Pin;
