@@ -13,3 +13,32 @@ Web App URL - http://attendance.mangoitsol.com/
 figma-https://www.figma.com/file/R9VDLEoOiLgwxAcSRHUhdt/Untitled?type=design&node-id=232-1519&mode=design
    
 
+username: govindmit
+Email: govind.mangoitsolutions@gmail.com
+Pass: G@vind@123
+Token: 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
+
+
+data": {
+        "className": "React",
+        "_id": "650436a75fd5851b7a2ca21e",
+        "__v": 0
+    }
+
+
+    "data": {
+        "className": "ReactNative",
+        "_id": "650437165fd5851b7a2ca221",
+        "__v": 0
+    }
+
+
+    "className": "Nodejs",
+        "_id": "6504374c5fd5851b7a2ca224",
+        "__v": 0
+    
+     "className": "Javascript",
+        "_id": "6504376e5fd5851b7a2ca227",
+        "__v": 0
+
+

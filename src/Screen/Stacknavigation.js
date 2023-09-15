@@ -1,16 +1,17 @@
 import React, {useContext} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Login from './Login';
-
 import {UserDetailContext} from '../../App';
 import DrawerManager from './DrawerManager';
 import DrawerCounsellor from './DrawerCounsellor';
 import ForgotPassword from './ForgotPassword';
+import AddCousellorform from './AddCounsellorform';
 
 const Stack = createStackNavigator();
 
 const Stacknavigation = () => {
-  const {userDetail} = useContext(UserDetailContext);
+  const {userDetail} = useContext(UserDetailContext); 
+  
   console.log(' 4444 ', userDetail, '333453');
   console.log(userDetail.token);
   return (
@@ -21,7 +22,10 @@ const Stacknavigation = () => {
           <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
         </>
       ) : userDetail?.role == 'manager' ? (
+        <>
         <Stack.Screen name="DashboardManager" component={DrawerManager} />
+        <Stack.Screen name="AddCousellorform" component={AddCousellorform} />
+        </>
       ) : (
         <Stack.Screen name="DashboardCounsellor" component={DrawerCounsellor} 
 

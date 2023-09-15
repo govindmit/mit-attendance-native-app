@@ -5,21 +5,20 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import {getuserFromAPI} from '../../API/auth';
 import HomeIcon from '../HomeIconManager';
-import { useNavigation } from "@react-navigation/native";
+import {useNavigation} from '@react-navigation/native';
 import {useContext} from 'react';
 import {UserDetailContext} from '../../../App';
 
-
 const Councellor = () => {
-  const navigation= useNavigation();
+  const navigation = useNavigation();
 
   const [searchText, setSearchText] = useState('');
 
   const [userData, setUserData] = useState([]);
   const {userDetail} = useContext(UserDetailContext);
 
-  const [currentPage, setCurrentPage] = useState(1); 
-  const usersPerPage = 5; 
+  const [currentPage, setCurrentPage] = useState(1);
+  const usersPerPage = 5;
 
   const getData = async () => {
     try {
@@ -38,23 +37,19 @@ const Councellor = () => {
   useEffect(() => {
     getData();
   }, []);
-  
-  const counsellorUsers = userData.filter(
-    user => user.role.name === 'counsellor');
 
+  const counsellorUsers = userData.filter(
+    user => user.role.name === 'counsellor',
+  );
 
   const handleSearch = () => {};
-;
-
   const totalPages = Math.ceil(counsellorUsers.length / usersPerPage);
-  const handlePageChange = (newPage) => {
+  const handlePageChange = newPage => {
     setCurrentPage(newPage);
   };
 
   const startIndex = (currentPage - 1) * usersPerPage;
   const endIndex = startIndex + usersPerPage;
-
-  
 
   return (
     <ScrollView style={{flex: 1}}>
@@ -104,7 +99,7 @@ const Councellor = () => {
           <Button
             color={'#005CB3'}
             title="Add Counselor"
-            onPress={()=>navigation.navigate("My Profile")}
+            onPress={() => navigation.navigate('AddCousellorform')}
           />
         </View>
       </View>
@@ -144,77 +139,73 @@ const Councellor = () => {
           </Text>
         </View>
 
-        {counsellorUsers.slice(startIndex, endIndex).map((user) => (
+        {counsellorUsers.slice(startIndex, endIndex).map(user => (
+          <View
+            key={user._id}
+            style={{
+              flexDirection: 'row',
+              margin: 10,
+              padding: 10,
+            }}>
+            <Text
+              style={{
+                flex: 1,
+                fontWeight: 'bold',
+                fontSize: 16,
+                color: 'black',
+              }}>
+              {user.name}
+            </Text>
+            <Text
+              style={{
+                flex: 1,
+                fontWeight: 'bold',
+                fontSize: 16,
+                color: 'black',
+                marginRight: 60,
+              }}>
+              {user.classId && user.classId.className
+                ? user.classId.className
+                : 'Null'}
+            </Text>
+
+            <Icon
+              name="form"
+              size={20}
+              style={{marginRight: 10, color: 'black'}}
+            />
+            <Icon name="delete" size={20} style={{color: 'black'}} />
+          </View>
+        ))}
         <View
-          key={user._id}
           style={{
             flexDirection: 'row',
-            margin: 10,
-            padding: 10,
+            justifyContent: 'flex-end',
+            marginVertical: 10,
           }}>
-          <Text
-            style={{
-              flex: 1,
-              fontWeight: 'bold',
-              fontSize: 16,
-              color: 'black',
-            }}>
-            {user.name}
-          </Text>
-          <Text
-            style={{
-              flex: 1,
-              fontWeight: 'bold',
-              fontSize: 16,
-              color: 'black',
-              marginRight: 60,
-            }}>
-            {user.classId && user.classId.className
-              ? user.classId.className
-              : 'Null'}
-          </Text>
-
-          <Icon name="form" size={20} style={{ marginRight: 10, color: 'black' }} />
-          <Icon name="delete" size={20} style={{ color: 'black' }} />
+          {currentPage > 1 && (
+            <Icon
+              name="left"
+              size={20}
+              style={{color: 'black'}}
+              onPress={() => {
+                handlePageChange(currentPage - 1);
+              }}
+            />
+          )}
+          {currentPage < totalPages && (
+            <Icon
+              name="right"
+              size={20}
+              style={{color: 'black'}}
+              onPress={() => {
+                handlePageChange(currentPage + 1);
+              }}
+            />
+          )}
         </View>
-      ))}
 
-<View style={{ flexDirection: 'row', justifyContent: 'center', marginVertical: 10 }}>
-  <Icon
-    name="left"
-    size={20}
-    style={{ color: 'black' }}
-    onPress={() => {
-      if (currentPage > 1) {
-        handlePageChange(currentPage - 1);
-      }
-    }}
-  />
-  {Array.from({ length: totalPages }, (_, index) => (
-    <Icon
-      key={index}
-      name="right"
-      size={20}
-      style={{ color: 'black' }}
-      onPress={() => {
-        handlePageChange(index + 1);
-      }}
-    />
-  ))}
-</View>
-
-          {/* <Icon
-          name="right"
-          size={20}
-          style={{marginHorizontal:100,color: 'black'}}
-          onPress={() => {
-            handlePageChange(index+1);
-          }}
-        /> */}
-
-
-     
-      <HomeIcon />
+        <HomeIcon />
       </View>
     </ScrollView>
   );
@@ -222,12 +213,8 @@ const Councellor = () => {
 
 export default Councellor;
 
-
-
-
-
-
-        {/* {counsellorUsers.map(user => (
+{
+  /* {counsellorUsers.map(user => (
           <View
             key={user._id}
             style={{
@@ -271,4 +258,5 @@ export default Councellor;
   );
 };
 
-export default Councellor; */}
+export default Councellor; */
+}
